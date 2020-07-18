@@ -1,0 +1,12 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="SisATU.Servicios.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="SisATU_Servicios_ServiceATU_Servicio_ATU" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://172.31.48.15/ServiciosATU/Servicio_ATU.asmx</Value>
+    </Setting>
+    <Setting Name="SisATU_Servicios_Servicio_STD_Servicio_STD" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://172.31.48.15/ServiciosATU/Servicio_STD.asmx</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

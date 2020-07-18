@@ -1,0 +1,83 @@
+﻿@model SisATU.Base.ViewModel.BackOffice.BackOfficeLoginVM
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Login Back Office</title>
+
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700' rel='stylesheet' type='text/css'>
+    <!-- Add local styles, mostly for plugins css file -->
+    <!-- Add jQuery Style direct - used for jQGrid plugin -->
+    <link href="@Url.Content("~/Scripts/plugins/jquery-ui/jquery-ui.min.css")" rel="stylesheet" type="text/css" />
+    <!-- Primary Inspinia style -->
+    @Styles.Render("~/plugins/toastrStyles")
+    <link href="~/Scripts/plugins/gritter/jquery.gritter.css" rel="stylesheet" />
+    @Styles.Render("~/plugins/select2Styles")
+    @Styles.Render("~/Content/css")
+    @Styles.Render("~/font-awesome/css")
+    @Scripts.Render("~/bundles/jquery")
+    @*@Scripts.Render("~/bundles/jqueryui")*@
+    @Styles.Render("~/Content/plugins/dataTables/dataTablesStyles")
+    @Styles.Render("~/Content/plugins/iCheck/iCheckStyles")
+    @Styles.Render("~/plugins/laddaStyles")
+    @Styles.Render("~/plugins/sweetAlertStyles")
+    @Scripts.Render("~/plugins/select2")
+    @*@Styles.Render("~/plugins/select2Styles")*@
+    @Styles.Render("~/plugins/datetimepickerStyles")
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+<body class="top-navigation">
+   
+    <div class="wrapper wrapper-content">
+       
+        <div class="gray-bg">
+            <div class="container">
+                <div class="row">
+                    <img src="~/Images/ATU/Logos/LOGO_CAMBIO_360.png" width="270" />
+                    <br />
+                    <br />
+                    <div class="col-md-12 white-bg">
+                        <h2 class="colorLetraATU" style="font-weight:600;text-align:center">Ingreso</h2>
+                        <div class="middle-box text-center loginscreen no-padding" style="margin-top: 0;">
+                            <div class="m-b-xl">
+                                @using (Html.BeginForm("LoginBackOffice", "BackOffice", FormMethod.Post, new { @class = "m-t", @role = "form" }))
+                                {
+                                    <div class="form-group">
+                                        @Html.TextBoxFor(c => c.Usuario, new { @class = "form-control", @placeholder = "Nro de documento", @autocomplete = "off" })
+                                    </div>
+                                    <div class="form-group">
+                                        @Html.PasswordFor(c => c.Password, new { @class = "form-control", @placeholder = "Clave", @autocomplete = "off" })
+                                    </div>
+                                    if (ViewBag.ErrorMessage != null)
+                                    {
+                                        <div class="form-group">
+                                            <div class="danger" style="color:red">@ViewBag.ErrorMessage</div>
+                                        </div>
+                                    }
+                                    <button type="submit" class="btn btn-primary block full-width m-b ladda-button" data-style="zoom-out" id="btnIngresar">Login</button>
+                                    <a href="#" id="btnRecuperarContrasenia"><small>¿Se te olvidó tu contraseña?</small></a>
+                                    <p class="text-muted text-center"><small>¿No tiene una cuenta?</small></p>
+                                    <a class="btn btn-sm btn-white btn-block" href="#" id="btnCrearCuenta">Crea una cuenta</a>
+                                }
+                                <p class="m-t"></p>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+
+        </div>
+
+
+    </div>
+</body>
+</html>

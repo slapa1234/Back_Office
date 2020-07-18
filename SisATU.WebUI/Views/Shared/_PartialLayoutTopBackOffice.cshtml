@@ -1,0 +1,48 @@
+﻿@using SisATU.Base.ViewModel.BackOffice;
+<div class="navbarBO">
+
+    @{
+
+        List<BackOfficeMenuVM> menus = new List<BackOfficeMenuVM>();
+        menus = (List<BackOfficeMenuVM>)Session["menuBackOffice"];
+    }
+
+    @foreach (var item in menus)
+    {
+
+
+        <a href='@Url.Action(item.Vista,item.Controlador)'>@item.MenuNombre</a>
+    }
+    
+   
+    @*<div class="dropdownBO">
+        <button class="dropbtn">
+            Dropdown
+            <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="dropdown-content">
+
+            <div class="rowBO">
+                <div class="columnBO">
+                    <h3>Category 1</h3>
+                    <a href="#">Link 1</a>
+                    <a href="#">Link 2</a>
+                    <a href="#">Link 3</a>
+                </div>
+                <div class="columnBO">
+                    <h3>Category 2</h3>
+                    <a href="#">Link 1</a>
+                    <a href="#">Link 2</a>
+                    <a href="#">Link 3</a>
+                </div>
+                <div class="columnBO">
+                    <h3>Category 3</h3>
+                    <a href="#">Link 1</a>
+                    <a href="#">Link 2</a>
+                    <a href="#">Link 3</a>
+                </div>
+            </div>
+        </div>
+    </div>*@
+    <a href='@Url.Action("LoginBackOffice","BackOffice")'>Salir</a>
+</div>
